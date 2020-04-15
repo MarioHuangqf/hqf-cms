@@ -2,6 +2,7 @@ package com.cms.yxf.exception;
 
 import lombok.Getter;
 
+// 自定义异常
 @Getter
 public class APIException extends RuntimeException{
 
