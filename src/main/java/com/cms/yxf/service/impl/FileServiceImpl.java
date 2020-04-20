@@ -88,6 +88,6 @@ public class FileServiceImpl implements FileService{
             throw new APIException(e.getMessage());
         }
 
-        return "";
+        return filePath.toString();
     }
 }
