@@ -2,7 +2,7 @@ package com.cms.yxf.service.impl;
 
 import com.cms.yxf.exception.APIException;
 import com.cms.yxf.model.dto.UserDTO;
-import com.cms.yxf.model.entity.UserEntity;
+import com.cms.yxf.repository.entity.UserEntity;
 import com.cms.yxf.repository.UserRepository;
 import com.cms.yxf.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;

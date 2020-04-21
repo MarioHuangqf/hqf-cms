@@ -1,13 +1,12 @@
 package com.cms.yxf.controller.resource;
 
 import com.cms.yxf.model.dto.UserDTO;
-import com.cms.yxf.model.entity.UserEntity;
+import com.cms.yxf.repository.entity.UserEntity;
 import com.cms.yxf.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.util.List;
 import java.util.Map;
 
 @RestController

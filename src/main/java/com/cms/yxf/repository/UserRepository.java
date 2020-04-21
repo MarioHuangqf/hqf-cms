@@ -1,6 +1,6 @@
 package com.cms.yxf.repository;
 
-import com.cms.yxf.model.entity.UserEntity;
+import com.cms.yxf.repository.entity.UserEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Query;

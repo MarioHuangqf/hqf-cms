@@ -2,7 +2,7 @@ package com.cms.yxf.service;
 
 
 import com.cms.yxf.model.dto.UserDTO;
-import com.cms.yxf.model.entity.UserEntity;
+import com.cms.yxf.repository.entity.UserEntity;
 
 import java.util.Map;
 

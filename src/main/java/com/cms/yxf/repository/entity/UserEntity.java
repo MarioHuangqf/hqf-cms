@@ -1,4 +1,4 @@
-package com.cms.yxf.model.entity;
+package com.cms.yxf.repository.entity;
 
 import lombok.Data;
 

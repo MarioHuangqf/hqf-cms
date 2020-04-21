@@ -1,5 +1,6 @@
 package com.cms.yxf.model.dto;
 
+import com.cms.yxf.repository.entity.UserEntity;
 import lombok.Builder;
 import lombok.Data;
 
@@ -26,4 +27,8 @@ public class UserDTO {
     @Email(message = "邮箱格式不正确")
     private String email;
 
+    public static UserDTO convertToDTO(UserEntity source) {
+        UserDTO userDTO = new UserDTO();
+        return userDTO;
+    }
 }
