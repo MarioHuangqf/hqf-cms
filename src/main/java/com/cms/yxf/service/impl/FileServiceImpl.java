@@ -7,6 +7,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
 import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -30,6 +32,15 @@ public class FileServiceImpl implements FileService{
         }
 
         String fileName = file.getOriginalFilename();
+        try {
+            // 获取图片长宽
+            BufferedImage bufferedImage = ImageIO.read(file.getInputStream());
+            int width = bufferedImage.getWidth();
+            int hight = bufferedImage.getHeight();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
         if (!checkFileSuffix(fileName)) {
             throw new APIException("仅支持.xlsx文件");
         }

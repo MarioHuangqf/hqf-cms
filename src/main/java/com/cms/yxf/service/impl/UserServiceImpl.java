@@ -1,6 +1,7 @@
 package com.cms.yxf.service.impl;
 
 import com.cms.yxf.exception.APIException;
+import com.cms.yxf.model.converter.UserConverter;
 import com.cms.yxf.model.dto.UserDTO;
 import com.cms.yxf.repository.entity.UserEntity;
 import com.cms.yxf.repository.UserRepository;
