@@ -19,7 +19,7 @@
 	</properties>
 
 	<dependencies>
-        <!-- MariaDB驱动 -->
+        <!-- MariaDB数据库驱动 -->
         <dependency>
             <groupId>org.mariadb.jdbc</groupId>
             <artifactId>mariadb-java-client</artifactId>
