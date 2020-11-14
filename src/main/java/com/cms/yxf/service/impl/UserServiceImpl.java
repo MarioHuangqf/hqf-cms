@@ -7,18 +7,23 @@ import com.cms.yxf.repository.entity.UserEntity;
 import com.cms.yxf.repository.UserRepository;
 import com.cms.yxf.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserRepository userRepository;
+
+    @Autowired UserConverter userConverter;
 
     @Override
     public String addUser(UserDTO userDTO) {
@@ -29,18 +34,14 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public Map<String, Map<String, UserEntity>> getusers() {
-        List list = userRepository.findUsers();
-        Map<String, Map<String, UserEntity>> map = new HashMap<>();
-        for (Object row:list) {
-            Object[] cells = (Object[]) row;
-            Map<String, UserEntity> map1 = new HashMap<>();
-            map1.put((String) cells[1], (UserEntity)cells[2]);
-            map.put((String)cells[0], map1);
-        }
+    public List<UserDTO> getUsers() {
+        List<UserEntity> userEntities = userRepository.findAll();
+        return userEntities.stream().map(u -> UserDTO.convertToDTO(u)).collect(Collectors.toList());
+    }
 
-        System.out.println("email:"+Optional.ofNullable(map).map(e -> e.get("1")).map(e -> e.get("1")).map(e -> e.getEmail()).orElse(""));
-
-        return map;
+    @Override
+    public Page<UserDTO> getUserByPage(Pageable pageable) {
+        Page<UserEntity> page = userRepository.findAll(pageable);
+        return page.map(userConverter::convert);
     }
 }

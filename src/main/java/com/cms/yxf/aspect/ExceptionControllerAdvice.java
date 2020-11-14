@@ -20,6 +20,6 @@ public class ExceptionControllerAdvice {
 
     @ExceptionHandler(APIException.class)
     public ResultVO<String> APIExceptionHandler(APIException e) {
-        return new ResultVO<>(ResultCode.FAILED, e.getMsg());
+        return new ResultVO<>(ResultCode.FAILED, e.getMessage());
     }
 }

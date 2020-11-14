@@ -6,7 +6,7 @@ import com.cms.yxf.model.dto.UserDTO;
 import com.cms.yxf.repository.entity.UserEntity;
 import org.springframework.stereotype.Component;
 
-// 提供给page分页转换对象page.map(converter)
+// 提供给page分页转换DTO page.map(userConverter::convert)
 @Component
 public class UserConverter implements Converter<UserEntity, UserDTO> {
 

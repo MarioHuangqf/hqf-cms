@@ -6,7 +6,9 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
+// 开启定时任务
 @EnableScheduling
+// springboot启动类
 @SpringBootApplication
 public class YxfApplication extends SpringBootServletInitializer {
 
